@@ -1,0 +1,5 @@
+T_User(P_user_id, )
+    T_Antwort(PF_user_id,PF_frage_id, PF_referat_id, inhalt)
+T_Frage(P_frage_id, inhalt, antwortmoeglichkeit)
+T_Formular(P_formular_id, F_frage_id, titel)
+T_referat(P_referat_id,)
