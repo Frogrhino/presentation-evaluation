@@ -1,9 +1,24 @@
+-- phpMyAdmin SQL Dump
+-- version 5.1.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: localhost:8889
+-- Generation Time: Dec 14, 2022 at 01:57 PM
+-- Server version: 5.7.34
+-- PHP Version: 7.4.21
+
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
 
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
 --
--- Database: `referat_bewertung`
+-- Database: `ref_test`
 --
 
 -- --------------------------------------------------------
@@ -46,6 +61,18 @@ CREATE TABLE `T_FRAGE` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `T_GEWICHTUNG`
+--
+
+CREATE TABLE `T_GEWICHTUNG` (
+  `P_GEWICHTUNG_ID` int(11) NOT NULL,
+  `BEZEICHNUNG` varchar(64) DEFAULT NULL,
+  `PROZENT` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `T_REFERAT`
 --
 
@@ -68,12 +95,6 @@ CREATE TABLE `T_USER` (
   `NAME` varchar(64) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-
-CREATE TABLE `T_GEWICHTUNG` (
-  `P_GEWICHTUNG_ID` int(11) NOT NULL,
-  `BEZEICHNUNG` varchar(64),
-  `PROZENT` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 --
 -- Indexes for dumped tables
 --
@@ -81,10 +102,6 @@ CREATE TABLE `T_GEWICHTUNG` (
 --
 -- Indexes for table `T_ANTWORT`
 --
-
-ALTER TABLE `T_GEWICHTUNG`
-  ADD PRIMARY KEY (`P_GEWICHTUNG_ID`);
-
 ALTER TABLE `T_ANTWORT`
   ADD PRIMARY KEY (`PF_FRAGE_ID`,`PF_USER_ID`,`PF_REFERAT_ID`),
   ADD KEY `t_antwort_ibfk_1` (`PF_REFERAT_ID`);
@@ -102,6 +119,12 @@ ALTER TABLE `T_FRAGE`
   ADD PRIMARY KEY (`P_FRAGE_ID`),
   ADD KEY `t_frage_ibfk_1` (`F_FORMULAR_ID`),
   ADD KEY `t_frage_ibfk_2` (`F_GEWICHTUNG_ID`);
+
+--
+-- Indexes for table `T_GEWICHTUNG`
+--
+ALTER TABLE `T_GEWICHTUNG`
+  ADD PRIMARY KEY (`P_GEWICHTUNG_ID`);
 
 --
 -- Indexes for table `T_REFERAT`
@@ -132,7 +155,6 @@ ALTER TABLE `T_ANTWORT`
 ALTER TABLE `T_FRAGE`
   ADD CONSTRAINT `t_frage_ibfk_1` FOREIGN KEY (`F_FORMULAR_ID`) REFERENCES `T_FORMULAR` (`P_FORMULAR_ID`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `t_frage_ibfk_2` FOREIGN KEY (`F_GEWICHTUNG_ID`) REFERENCES `T_GEWICHTUNG` (`P_GEWICHTUNG_ID`) ON DELETE CASCADE ON UPDATE CASCADE;
-
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
