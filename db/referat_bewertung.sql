@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Dec 15, 2022 at 01:20 PM
+-- Generation Time: Dec 15, 2022 at 01:46 PM
 -- Server version: 5.7.34
 -- PHP Version: 7.4.21
 
@@ -62,22 +62,23 @@ CREATE TABLE `T_FRAGE` (
   `P_FRAGE_ID` int(11) NOT NULL,
   `F_FORMULAR_ID` int(11) NOT NULL,
   `F_GEWICHTUNG_ID` int(11) NOT NULL,
-  `INHALT` varchar(1000) NOT NULL
+  `TITEL` varchar(64) NOT NULL,
+  `BESCHREIBUNG` varchar(1024) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `T_FRAGE`
 --
 
-INSERT INTO `T_FRAGE` (`P_FRAGE_ID`, `F_FORMULAR_ID`, `F_GEWICHTUNG_ID`, `INHALT`) VALUES
-(1, 1, 1, 'Sachliche Gliederung\r\n(Struktur erkennbar, roter Faden)'),
-(2, 1, 1, 'Zeitliche Gliederung der Präsentation (Einhaltung der Präsentationszeit, Schwerpunktsetzung )'),
-(3, 1, 1, 'Darstellung Fachinhalte\r\n(fachliche Richtigkeit)'),
-(4, 1, 1, 'Fachsprache (Ver/- Anwendung des Fachvokabulars)'),
-(5, 1, 2, 'Angepasste Vortragsweise (Freundlichkeit, Verständlichkeit, Körpersprache, Blickkontakt)'),
-(6, 1, 2, 'Angepasste Ausdrucksweise (Lautstärke, Sprachtempo, Artikulation)'),
-(7, 1, 2, 'Angepasste Darstellungsweise (Text gut lesbar, einheitliches Layout, übersichtliche Gestaltung, Verknüpfung verbaler Aussagen mit Text und Bild der Präsentation, ausgewogenes Verhältnis Text und Bild)'),
-(8, 1, 2, 'Medieneinsatz (Einsatz und Umgang mit Medien)');
+INSERT INTO `T_FRAGE` (`P_FRAGE_ID`, `F_FORMULAR_ID`, `F_GEWICHTUNG_ID`, `TITEL`, `BESCHREIBUNG`) VALUES
+(1, 1, 1, 'Sachliche Gliederung', '(Struktur erkennbar, roter Faden)'),
+(2, 1, 1, 'Zeitliche Gliederung der Präsentation', '(Einhaltung der Präsentationszeit, Schwerpunktsetzung )'),
+(3, 1, 1, 'Darstellung Fachinhalte', '(fachliche Richtigkeit)'),
+(4, 1, 1, 'Fachsprache', '(Ver/- Anwendung des Fachvokabulars)'),
+(5, 1, 2, 'Angepasste Vortragsweise', '(Freundlichkeit, Verständlichkeit, Körpersprache, Blickkontakt)'),
+(6, 1, 2, 'Angepasste Ausdrucksweise', '(Lautstärke, Sprachtempo, Artikulation)'),
+(7, 1, 2, 'Angepasste Darstellungsweise', '(Text gut lesbar, einheitliches Layout, übersichtliche Gestaltung, Verknüpfung verbaler Aussagen mit Text und Bild der Präsentation, ausgewogenes Verhältnis Text und Bild)'),
+(8, 1, 2, 'Medieneinsatz', '(Einsatz und Umgang mit Medien)');
 
 -- --------------------------------------------------------
 
