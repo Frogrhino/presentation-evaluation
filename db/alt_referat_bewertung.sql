@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Dec 14, 2022 at 01:57 PM
+-- Generation Time: Dec 14, 2022 at 03:18 PM
 -- Server version: 5.7.34
 -- PHP Version: 7.4.21
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `ref_test`
+-- Database: `test_2`
 --
 
 -- --------------------------------------------------------
@@ -137,6 +137,40 @@ ALTER TABLE `T_REFERAT`
 --
 ALTER TABLE `T_USER`
   ADD PRIMARY KEY (`P_USER_ID`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `T_FORMULAR`
+--
+ALTER TABLE `T_FORMULAR`
+  MODIFY `P_FORMULAR_ID` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `T_FRAGE`
+--
+ALTER TABLE `T_FRAGE`
+  MODIFY `P_FRAGE_ID` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `T_GEWICHTUNG`
+--
+ALTER TABLE `T_GEWICHTUNG`
+  MODIFY `P_GEWICHTUNG_ID` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `T_REFERAT`
+--
+ALTER TABLE `T_REFERAT`
+  MODIFY `P_REFERAT_ID` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `T_USER`
+--
+ALTER TABLE `T_USER`
+  MODIFY `P_USER_ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Constraints for dumped tables
