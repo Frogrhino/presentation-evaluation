@@ -18,7 +18,7 @@ const AssessmentBox = ({assessmentId, boxHeader, weighting ,assessmentLabels, po
         };
         const array = [];
             for (let i = 0; i<assessmentLabels.length;i++){
-                array.push(AssessmentElement(temp = {labelText: assessmentLabels[i], numberButtons: pointRange[i]}))
+                array.push(<AssessmentElement labelText={assessmentLabels[i]} numberButtons={pointRange[i]}/>)
             }
     
             return (array)
