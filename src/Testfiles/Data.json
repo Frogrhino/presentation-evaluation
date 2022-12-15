@@ -1,0 +1,30 @@
+{"dataset":[
+    {
+    "assesmentId":1,
+    "boxHeaders":"Aufbau und inhaltliche Gestaltung",
+    "weightings":60,
+    "assessmentLabels":"Sachliche Gliederung",
+    "pointRanges":6
+},
+{
+    "assesmentId":2,
+    "boxHeaders":"Aufbau und inhaltliche Gestaltung",
+    "weightings":60,
+    "assessmentLabels":"Zeitliche Gliederung der Präsentation",
+    "pointRanges":6
+},
+{
+    "assesmentId":3,
+    "boxHeaders":"Aufbau und inhaltliche Gestaltung",
+    "weightings":60,
+    "assessmentLabels":"Darstellung Fachinhalte",
+    "pointRanges":6
+},
+{
+    "assesmentId":4,
+    "boxHeaders":"Aufbau und inhaltliche Gestaltung",
+    "weightings":60,
+    "assessmentLabels":"Fachsprache",
+    "pointRanges":6
+}]
+}
