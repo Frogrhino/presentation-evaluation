@@ -26,11 +26,15 @@ const AssessmentElement = ({labelText, numberButtons}: AssessmentElementProps) =
 
     return(
     <div>
+        <div>
         <label
         className='assessmentLabel'>
             {labelText}
         </label>
+        </div>
+        <div>
         {renderRadioButtons()}
+        </div>
     </div>
     )
 }

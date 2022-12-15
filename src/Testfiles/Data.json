@@ -1,30 +1,59 @@
 {"dataset":[
     {
-    "assesmentId":1,
+    "assessmentId":1,
     "boxHeaders":"Aufbau und inhaltliche Gestaltung",
     "weightings":60,
     "assessmentLabels":"Sachliche Gliederung",
     "pointRanges":6
 },
 {
-    "assesmentId":2,
+    "assessmentId":2,
     "boxHeaders":"Aufbau und inhaltliche Gestaltung",
     "weightings":60,
     "assessmentLabels":"Zeitliche Gliederung der Präsentation",
     "pointRanges":6
 },
 {
-    "assesmentId":3,
+    "assessmentId":3,
     "boxHeaders":"Aufbau und inhaltliche Gestaltung",
     "weightings":60,
     "assessmentLabels":"Darstellung Fachinhalte",
     "pointRanges":6
 },
 {
-    "assesmentId":4,
+    "assessmentId":4,
     "boxHeaders":"Aufbau und inhaltliche Gestaltung",
     "weightings":60,
     "assessmentLabels":"Fachsprache",
     "pointRanges":6
-}]
+},
+{
+    "assessmentId":5,
+    "boxHeaders":"Medieneinsatz, Gestaltung und Vortragsweise",
+    "weightings":40,
+    "assessmentLabels":"Angepasste Vortragsweise",
+    "pointRanges":6
+},
+{
+    "assessmentId":6,
+    "boxHeaders":"Medieneinsatz, Gestaltung und Vortragsweise",
+    "weightings":40,
+    "assessmentLabels":"Angepasste Ausdrucksweise",
+    "pointRanges":6
+},
+{
+    "assessmentId":7,
+    "boxHeaders":"Medieneinsatz, Gestaltung und Vortragsweise",
+    "weightings":40,
+    "assessmentLabels":"Angepasste Darstellungsweise",
+    "pointRanges":6
+},
+{
+    "assessmentId":8,
+    "boxHeaders":"Medieneinsatz, Gestaltung und Vortragsweise",
+    "weightings":40,
+    "assessmentLabels":"Medieneinsatz",
+    "pointRanges":6
+}
+]
 }

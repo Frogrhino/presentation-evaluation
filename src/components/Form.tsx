@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import { Console } from "console";
+import React, { useEffect, useState } from "react";
 import data from '../Testfiles/Data.json'
 import AssessmentBox, { AssessmentBoxProps } from "./AssessmentBox";
 
@@ -14,18 +15,22 @@ interface FormProps{
 const Form = () => {
     const [state, setState] = useState<FormProps[]>([]);
 
-    const getData = () => {
-        data.dataset.map(element => function(element: FormProps){
-            const {assessmentId, assessmentLabels, pointRanges, boxHeaders, weightings} = element;
-            setState([...state, {assessmentId, assessmentLabels, pointRanges, boxHeaders, weightings}])
+    useEffect(() => {
+        const newState = data.dataset.map(element => {
+            return {assessmentId: element.assessmentId,
+                    assessmentLabels: element.assessmentLabels,
+                    pointRanges: element.pointRanges,
+                    boxHeaders: element.boxHeaders,
+                    weightings: element.weightings}
         })
-    }
+        setState(newState)
+    }, [])
+
     const transformData = () => {
         
     }
 
     const renderAssessmentBoxes = () => {
-        getData();
         const checkHeader: string[] = [];
         let ids: number[] = [];
         let labels: string[] = [];
@@ -48,7 +53,8 @@ const Form = () => {
                         ranges.push(state[n].pointRanges)
                     }
                 }
-                returnData.push(AssessmentBox(temp = {assessmentId: ids, boxHeader: checkedHeader, weighting: state[i].weightings, assessmentLabels: labels, pointRange: ranges}))
+            
+                returnData.push(<AssessmentBox assessmentId={ids} boxHeader={state[i].boxHeaders} weighting={state[i].weightings} assessmentLabels={labels} pointRange={ranges}/>)
                 ids = [];
                 labels = [];
                 ranges = [];
