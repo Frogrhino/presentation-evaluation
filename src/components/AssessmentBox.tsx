@@ -9,14 +9,13 @@ export interface AssessmentBoxProps{
     pointRange: number[]
 }
 
+//assessmentIds will later be handed down to AssessmentElements to identify scores for each AssessmentElement
 const AssessmentBox = ({assessmentId, boxHeader, weighting ,assessmentLabels, pointRange}: AssessmentBoxProps) => {
 
+    //rendereing AssessmentElements, one for each assessmentLabel
     const renderAssessmentElements = () => {
-        let temp: AssessmentElementProps=  {
-            labelText: "",
-            numberButtons: 0
-        };
         const array = [];
+            //loop to render individual AssessmentElements
             for (let i = 0; i<assessmentLabels.length;i++){
                 array.push(<AssessmentElement labelText={assessmentLabels[i]} numberButtons={pointRange[i]}/>)
             }

@@ -15,6 +15,7 @@ interface FormProps{
 const Form = () => {
     const [state, setState] = useState<FormProps[]>([]);
 
+    //on call of Form the state of it will be loaded with data from the temporary data-source (Data.json)
     useEffect(() => {
         const newState = data.dataset.map(element => {
             return {assessmentId: element.assessmentId,
@@ -26,26 +27,18 @@ const Form = () => {
         setState(newState)
     }, [])
 
-    const transformData = () => {
-        
-    }
-
+    //rendering AssessmentBoxes, one for each unique boxHeader
     const renderAssessmentBoxes = () => {
         const checkHeader: string[] = [];
         let ids: number[] = [];
         let labels: string[] = [];
         let ranges: number[] = [];
         const returnData = [];
-        let temp: AssessmentBoxProps=  {
-            assessmentId: [],
-            boxHeader: "",
-            weighting: 0,
-            assessmentLabels: [],
-            pointRange: []
-        };
+        //loop to render individual AssessmentBoxes
         for (let i=0;i<state.length;i++){
             if (!checkHeader.includes(state[i].boxHeaders)){
                 let checkedHeader = state[i].boxHeaders
+                //prepare data for each AssessmentBox
                 for (let n=0;n<state.length;n++){
                     if (checkedHeader == state[n].boxHeaders){
                         ids.push(state[n].assessmentId)
@@ -53,7 +46,6 @@ const Form = () => {
                         ranges.push(state[n].pointRanges)
                     }
                 }
-            
                 returnData.push(<AssessmentBox assessmentId={ids} boxHeader={state[i].boxHeaders} weighting={state[i].weightings} assessmentLabels={labels} pointRange={ranges}/>)
                 ids = [];
                 labels = [];
