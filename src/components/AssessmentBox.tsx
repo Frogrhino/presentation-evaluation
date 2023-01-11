@@ -17,7 +17,7 @@ const AssessmentBox = ({assessmentId, boxHeader, weighting ,assessmentLabels, po
         const array = [];
             //loop to render individual AssessmentElements
             for (let i = 0; i<assessmentLabels.length;i++){
-                array.push(<AssessmentElement labelText={assessmentLabels[i]} numberButtons={pointRange[i]}/>)
+                array.push(<AssessmentElement assessmentID={assessmentId[i]} labelText={assessmentLabels[i]} numberButtons={pointRange[i]}/>)
             }
     
             return (array)

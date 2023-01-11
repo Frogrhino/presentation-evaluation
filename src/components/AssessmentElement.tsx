@@ -2,13 +2,14 @@ import React, { useState } from "react";
 import { arrayBuffer } from "stream/consumers";
 
 export interface AssessmentElementProps {
+    assessmentID: number,
     labelText: string,
     numberButtons: number,
 }
 
-const AssessmentElement = ({labelText, numberButtons}: AssessmentElementProps) => {
+const AssessmentElement = ({assessmentID, labelText, numberButtons}: AssessmentElementProps) => {
     //id will later be handed down from AssessmentBox
-    const [assessment, setAssessment] = useState({id: '', score: ''});
+    const [assessment, setAssessment] = useState({id: assessmentID, score: ''});
 
     //save input for each AssessmentElement in the state
     const handleChange = (input: string) => {
