@@ -4,6 +4,7 @@ import { Route, Routes } from 'react-router-dom';
 import { LinkContainer } from 'react-router-bootstrap';
 import CreateEvaluation from './CreateEvaluation';
 import Evaluation from './Evaluation';
+import Form from './Form';
 
 function Homepage() {
   return (
@@ -31,6 +32,7 @@ function Homepage() {
                     {/* Define route of the different pages */}
                     <Route path="/CreateEvaluation" element={<CreateEvaluation />} />
                     <Route path="/Evaluation" element={<Evaluation />} />
+                    <Route path="/Form" element={<Form />} />
                 </Routes>
 
         </>
