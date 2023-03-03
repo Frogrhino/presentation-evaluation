@@ -23,19 +23,19 @@ const AssessmentBox = ({assessmentId, boxHeader, weighting ,assessmentLabels, po
             return (array)
     }
     return(
-        <>
-        <h1>
+        <div className={"AssessmentBox"}>
+        <h1 className={"AssessmentBoxHeader"}>
             {boxHeader}
         </h1>
         <div>
             {renderAssessmentElements()}
         </div>
         <div>
-            <p>
+            <p className={"AssessmentBoxWeighting"}>
                 {weighting}%
             </p>
         </div>
-        </>
+        </div>
     )
 }
 
