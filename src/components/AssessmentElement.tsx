@@ -21,22 +21,22 @@ const AssessmentElement = ({assessmentID, labelText, numberButtons}: AssessmentE
         const array = [];
         //loop to render individual radioButtons(belonging to a radioButtonGroup named after the AssessmentElement-Text) and adding a Label with a corresponding Number
         for (let i = 0; i<numberButtons;i++){
-            array.push(<input type={'radio'} value={i+1} name={'AssessmentRadioButtons_'+labelText} onChange={e => handleChange(e.target.value)}></input>)
-            array.push(<label>{i+1}</label>)
+            array.push(<input className={"AssessmentElementInput"} type={'radio'} value={i+1} name={'AssessmentRadioButtons_'+labelText} onChange={e => handleChange(e.target.value)}></input>)
+            array.push(<label className={"AssessmentElementRadioLabel"}>{i+1}</label>)
         }
 
         return (array)
     }
 
     return(
-    <div>
+    <div className={"AssessmentElement"}>
         <div>
         <label
-        className='assessmentLabel'>
+        className='AssessmentElementLabel'>
             {labelText}
         </label>
         </div>
-        <div>
+        <div  className={"AssessmentElementRadioGroup"}>
         {renderRadioButtons()}
         </div>
     </div>

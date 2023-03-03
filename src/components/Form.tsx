@@ -1,4 +1,5 @@
 import { Console } from "console";
+import './../css/Form.css'
 import React, { useEffect, useState } from "react";
 import data from '../Testfiles/Data.json'
 import AssessmentBox, { AssessmentBoxProps } from "./AssessmentBox";
@@ -58,7 +59,14 @@ const Form = () => {
 
     return(
         <div>
-            {renderAssessmentBoxes()}
+            <div  className={"AssessmentBoxGroup"}>
+                {renderAssessmentBoxes()}
+            </div>
+            <div className={"FormButtons"}>
+                <button className={"FormButtonSave"}>Save</button>
+                <button className={"FormButtonSubmit"}>Submit</button>
+                <button className={"FormButtonExit"}>Exit</button>
+            </div>
         </div>
     )
 }
